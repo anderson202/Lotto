@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Lotto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADH-Qo-mDQ">
+                                <rect key="frame" x="250" y="459" width="100" height="100"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="11"/>
+                                <state key="normal" title="Generate" backgroundImage="circle_icon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateNumber" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ITf-vG-Urf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwn-WL-QbM">
+                                <rect key="frame" x="252" y="59" width="98" height="52"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="40"/>
+                                <state key="normal" title="Lotto">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settings" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NYa-P0-t9o"/>
+                                    <segue destination="7Ah-DH-cJy" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="pb0-tF-aQz"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YoH-nk-0kI">
+                                <rect key="frame" x="0.0" y="140" width="600" height="162"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23529411764705882" green="0.50980392156862742" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ADH-Qo-mDQ" secondAttribute="bottom" constant="41" id="0Z2-ff-Z08"/>
+                            <constraint firstAttribute="centerY" secondItem="YoH-nk-0kI" secondAttribute="centerY" constant="79" id="6NU-zo-zQy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YoH-nk-0kI" secondAttribute="trailing" constant="-16" id="GTk-vx-k0Y"/>
+                            <constraint firstItem="YoH-nk-0kI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="LCp-H8-Lis"/>
+                            <constraint firstItem="uwn-WL-QbM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="39" id="dH5-ik-bWO"/>
+                            <constraint firstItem="ADH-Qo-mDQ" firstAttribute="centerX" secondItem="YoH-nk-0kI" secondAttribute="centerX" id="gQX-Sv-F6L"/>
+                            <constraint firstItem="YoH-nk-0kI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="96" id="kjA-53-BbK"/>
+                            <constraint firstItem="YoH-nk-0kI" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="muu-kQ-G2x"/>
+                            <constraint firstAttribute="centerX" secondItem="uwn-WL-QbM" secondAttribute="centerX" constant="-0.5" id="wld-Fg-dwj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kjA-53-BbK"/>
+                                <exclude reference="muu-kQ-G2x"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="FZW-gj-Y82"/>
+                    <connections>
+                        <outlet property="generateButton" destination="ADH-Qo-mDQ" id="3UU-0a-Gog"/>
+                        <outlet property="lottoDisplay" destination="YoH-nk-0kI" id="aLa-vY-8sy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-487" y="783"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="WtJ-2m-yCt">
+            <objects>
+                <viewController id="7Ah-DH-cJy" customClass="SettingsViewController" customModule="Lotto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5aX-5t-Ofr"/>
+                        <viewControllerLayoutGuide type="bottom" id="log-jY-IEx"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="iII-m6-qE7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-wv-lWA">
+                                <rect key="frame" x="281" y="553" width="40" height="27"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jEr-pP-2kn" kind="unwind" unwindAction="unwindToViewController:" id="KXk-WQ-vOd"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nN-Mf-7jv">
+                                <rect key="frame" x="1" y="161" width="600" height="162"/>
+                            </pickerView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6M-Pn-9Mh">
+                                <rect key="frame" x="535" y="87" width="51" height="31"/>
+                                <connections>
+                                    <action selector="alertSwitch:" destination="7Ah-DH-cJy" eventType="valueChanged" id="YWt-Ig-IkX"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Set winning lotto" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRZ-NK-5Fv">
+                                <rect key="frame" x="234" y="310" width="132" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Settings" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzd-Kl-6vF">
+                                <rect key="frame" x="16" y="28" width="84" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Lose Alert" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPQ-MS-XwJ">
+                                <rect key="frame" x="412" y="88" width="100" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.069078947368421059" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YPQ-MS-XwJ" firstAttribute="top" secondItem="5aX-5t-Ofr" secondAttribute="bottom" constant="68" id="1w5-oo-vzp"/>
+                            <constraint firstItem="f7h-wv-lWA" firstAttribute="top" secondItem="uRZ-NK-5Fv" secondAttribute="bottom" constant="213" id="80h-C2-pMl"/>
+                            <constraint firstItem="X6M-Pn-9Mh" firstAttribute="top" secondItem="5aX-5t-Ofr" secondAttribute="bottom" constant="67" id="ACb-Bp-9DM"/>
+                            <constraint firstItem="0nN-Mf-7jv" firstAttribute="leading" secondItem="iII-m6-qE7" secondAttribute="leadingMargin" constant="-15" id="BTp-RK-d2p"/>
+                            <constraint firstItem="zzd-Kl-6vF" firstAttribute="top" secondItem="5aX-5t-Ofr" secondAttribute="bottom" constant="8" id="Dwk-bY-edU"/>
+                            <constraint firstItem="zzd-Kl-6vF" firstAttribute="leading" secondItem="iII-m6-qE7" secondAttribute="leadingMargin" id="LR8-MW-kTT"/>
+                            <constraint firstItem="X6M-Pn-9Mh" firstAttribute="trailing" secondItem="iII-m6-qE7" secondAttribute="trailingMargin" id="TjE-r5-bih"/>
+                            <constraint firstAttribute="centerY" secondItem="0nN-Mf-7jv" secondAttribute="centerY" constant="58" id="ZTc-QU-n3M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0nN-Mf-7jv" secondAttribute="trailing" constant="-17" id="d7q-vm-i6E"/>
+                            <constraint firstAttribute="centerX" secondItem="uRZ-NK-5Fv" secondAttribute="centerX" id="ldA-vL-y8h"/>
+                            <constraint firstAttribute="centerX" secondItem="f7h-wv-lWA" secondAttribute="centerX" constant="-0.5" id="oCL-KR-OJK"/>
+                            <constraint firstItem="X6M-Pn-9Mh" firstAttribute="trailing" secondItem="iII-m6-qE7" secondAttribute="trailingMargin" id="pzH-2v-yLg"/>
+                            <constraint firstItem="uRZ-NK-5Fv" firstAttribute="top" secondItem="0nN-Mf-7jv" secondAttribute="bottom" constant="-13" id="vIw-bX-ate"/>
+                            <constraint firstItem="X6M-Pn-9Mh" firstAttribute="leading" secondItem="YPQ-MS-XwJ" secondAttribute="trailing" constant="23" id="x5F-0c-aEA"/>
+                            <constraint firstItem="log-jY-IEx" firstAttribute="top" secondItem="f7h-wv-lWA" secondAttribute="bottom" constant="20" id="xBx-0n-Oj9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertSwitch" destination="X6M-Pn-9Mh" id="3AY-o4-2Bn"/>
+                        <outlet property="settingsPicker" destination="0nN-Mf-7jv" id="Vgc-d7-Kp6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xu3-bO-gj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jEr-pP-2kn" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="753"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Oaw-oP-8qe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YVC-nz-vL2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="44C-a7-NRv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JAm-vL-xqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1000" y="939"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle_icon" width="100" height="100"/>
+    </resources>
+</document>
